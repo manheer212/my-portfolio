@@ -36,15 +36,23 @@ function App() {
       <NavBar />
       <Banner />
       <Skills />
-            <div style={{ height: '500px', position: 'relative', zIndex: 10 }}>
+      {/* Centered Carousel Container */}
+      <div style={{ 
+        height: '500px', 
+        width: '100%', 
+        position: 'relative', 
+        zIndex: 10,
+        display: 'flex',          /* Centers the content */
+        justifyContent: 'center', /* Horizontal Center */
+        alignItems: 'center',     /* Vertical Center */
+        marginTop: '-50px'        /* Adjust spacing if needed */
+      }}>
         <Carousel
           items={skillsData}
-          direction='horizontal'
+          baseWidth={300}    /* Use 'baseWidth' for this component, not 'size' */
+          autoplay={true}
+          loop={true}
           pauseOnHover={true}
-          size='clamp(8rem, 1rem + 20vmin, 25rem)'
-          duration='60s'
-          bgColor='transparent'  /* Make transparent to see 3D background */
-          bgAccentColor='rgba(255,255,255,0.1)' /* Glass effect */
         />
       </div>
       <Projects />
